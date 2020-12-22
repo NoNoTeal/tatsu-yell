@@ -7,8 +7,8 @@ var fish = new Audio('./scripts/audio/fish.mp3');
 var tge;
 var n=5;
 clicker.onclick = function () {
-    if(clicker.classList == 'disabled') {
-        clicker.classList == 'stableButton';
+    if(clicker.classList == 'stableButton') {
+        clicker.className = 'disabled';
         clicker.innerText = 'Stop interval';
         train.play();
         tge = [window.setInterval(() => {
@@ -25,7 +25,7 @@ clicker.onclick = function () {
         }, 30000)
         ];
     } else {
-        clicker.classList == 'disabled';
+        clicker.className = 'stableButton';
         clicker.innerText = 'Start interval';
         for(var int of tge) {
             window.clearInterval(int)
